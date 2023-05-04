@@ -4,15 +4,12 @@ WORKDIR /usr/src/app
 RUN CODEX_RELEASE=$(curl -sX GET "https://api.github.com/repos/codex-team/codex.docs/releases/latest" | jq -r '.tag_name') && \
   curl -o /tmp/codex.tar.gz -L "https://github.com/codex-team/codex.docs/archive/refs/tags/${CODEX_RELEASE}.tar.gz" && \
   apk add -U --update --no-cache \
-    fontconfig \
-    font-noto \
     netcat-openbsd \
     nodejs && \
   apk add -U --update --no-cache --virtual=build-dependencies \
     build-base \
     g++ \
     gcc \
-    git \
     icu-libs \
     npm \
     openssl-dev \
