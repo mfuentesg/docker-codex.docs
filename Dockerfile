@@ -25,4 +25,3 @@ RUN CODEX_RELEASE=$(curl -sX GET "https://api.github.com/repos/codex-team/codex.
 EXPOSE 3000
 ENV NODE_ENV=production
 COPY root/ /
-CMD ["node", "dist/backend/app.js"]
