@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+if [[ ! -f /usr/src/app/docs-config.yaml ]]; then
+    cp /defaults/docs-config.yaml /usr/src/app/docs-config.yaml
+fi
+
+chown -R abc:abc /usr/src/app

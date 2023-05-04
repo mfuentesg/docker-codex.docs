@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+exec s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 3000" \
+        cd /usr/src/app s6-setuidgid abc node dist/backend/app.js
