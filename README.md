@@ -16,7 +16,7 @@ $ docker run --rm -p 3000:3000 mfuentesg/codex.docs
 
 Open your browser at http://localhost:3000, and there you are.
 
-## Help me keep making awesome stuff, and let's share a coffee
+**Help me keep making awesome stuff**
 
 <a href="https://www.buymeacoffee.com/mfuentesg" target="_blank">
    <img height="41" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" />
