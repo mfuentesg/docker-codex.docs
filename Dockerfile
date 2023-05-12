@@ -24,7 +24,7 @@ FROM ghcr.io/linuxserver/baseimage-alpine:arm64v8-3.16
 WORKDIR /usr/src/app
 LABEL maintainer="Marcelo Fuentes <marceloe.fuentes@gmail.com>"
 
-RUN apk add --no-cache nodejs
+RUN apk add -U --update --no-cache nodejs
 COPY --from=build /usr/src/app/package.json /usr/src/app/yarn.lock ./
 COPY --from=build /usr/src/app/prod_node_modules ./node_modules
 COPY --from=build /usr/src/app/dist ./dist
