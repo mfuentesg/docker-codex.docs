@@ -6,7 +6,7 @@ RUN CODEX_RELEASE=$(curl -sX GET "https://api.github.com/repos/codex-team/codex.
   curl -o /tmp/codex.tar.gz -L "https://github.com/codex-team/codex.docs/archive/refs/tags/${CODEX_RELEASE}.tar.gz" && \
   apk add -U --update --no-cache \
     netcat-openbsd \
-    nodejs && \
+    nodejs-current && \
   apk add -U --update --no-cache --virtual=build-dependencies \
     build-base \
     g++ \
@@ -24,7 +24,7 @@ FROM ghcr.io/linuxserver/baseimage-alpine:arm64v8-3.16
 WORKDIR /usr/src/app
 LABEL maintainer="Marcelo Fuentes <marceloe.fuentes@gmail.com>"
 
-RUN apk add -U --update --no-cache nodejs
+RUN apk add -U --update --no-cache nodejs-current
 COPY --from=build /usr/src/app/package.json /usr/src/app/yarn.lock ./
 COPY --from=build /usr/src/app/prod_node_modules ./node_modules
 COPY --from=build /usr/src/app/dist ./dist
